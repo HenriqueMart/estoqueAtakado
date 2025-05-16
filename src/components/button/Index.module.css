@@ -1,0 +1,21 @@
+
+
+.button{
+    background-color: var(--cor-branco);
+    font-family: var(--font-second);
+    font-size: 14px;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 25px ;
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    cursor: pointer;
+    width: 100%;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.button:hover{
+    background-color: #a6a6a6;
+    color: var(--cor-branco);
+    transition: 0.5s;
+}
