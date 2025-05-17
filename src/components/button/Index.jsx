@@ -1,10 +1,10 @@
 import style from './Index.module.css'
 
-export default function Index({title}){
+export default function Index({title, onClick}){
 
     return(
         <>
-            <button className={style.button}>{title}</button>
+            <button className={style.button} onClick={onClick}>{title}</button>
         </>
     )
 }
