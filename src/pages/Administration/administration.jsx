@@ -2,8 +2,15 @@ import Header from '../../components/header/Index';
 import ImgCarrinho from '../../images/main/carrinho-de-compras.png'
 import Button from '../../components/button/Index'
 import Style from './administration.module.css'
+import { useNavigate } from 'react-router-dom';
 
-export default function administration(){
+export default function Administration(){
+
+    const navigate = useNavigate();
+
+    const goHome = () => {
+        navigate('/Home');
+    };
 
     return(
         <div className={Style.container}>
@@ -21,7 +28,7 @@ export default function administration(){
                         <p>Serviços</p>
                     </div>
                     <div className={Style.button}>
-                        <Button title="Home"/>
+                        <Button title="Home" onClick={goHome}/>
                         <Button title="Estoque"/>
                     </div>
                 </nav>
