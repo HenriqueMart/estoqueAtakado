@@ -9,7 +9,7 @@ export default function Administration(){
     const navigate = useNavigate();
 
     const goHome = () => {
-        navigate('/Home');
+        navigate('/');
     };
 
     return(
