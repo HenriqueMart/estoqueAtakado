@@ -3,6 +3,7 @@ import ImgCarrinho from '../../images/main/carrinho-de-compras.png'
 import Button from '../../components/button/Index'
 import Style from './administration.module.css'
 import { useNavigate } from 'react-router-dom';
+import Tabela from '../../components/tabela/Index'
 
 export default function Administration(){
 
@@ -11,6 +12,12 @@ export default function Administration(){
     const goHome = () => {
         navigate('/');
     };
+    const goEstoque = () => {
+        alert("Dados atualizado com Sucesso!");
+        navigate('/Administration');
+    };
+
+   
 
     return(
         <div className={Style.container}>
@@ -29,7 +36,7 @@ export default function Administration(){
                     </div>
                     <div className={Style.button}>
                         <Button title="Home" onClick={goHome}/>
-                        <Button title="Estoque"/>
+                        <Button title="Estoque" onClick={goEstoque}/>
                     </div>
                 </nav>
                 <footer className={Style.footer}>
@@ -39,9 +46,12 @@ export default function Administration(){
                 </footer>
             </header>
             <main className={Style.main}>
+                <div className={Style.main_background}></div>
                 <section>
-                    <h2>Conteúdo</h2>
+                    <h2>Estoque</h2>
+                    <Tabela />
                 </section>
+                
             </main>
         </div>
     )
