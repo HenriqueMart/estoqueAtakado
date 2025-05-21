@@ -80,7 +80,7 @@ export default function Administration(){
                 <nav className={Style.nav}>
                     <div className={Style.information}>
                         <figure className={Style.figure}>
-                            <img className={Style.imagem} src={ImgCarrinho} alt="Carinho" />
+                            <img className={Style.imagem} src={ImgCarrinho} alt="Carinho" onClick={goHome}/>
                         </figure>
                         <div className={Style.store}>
                             <p>Atakado</p>
@@ -90,8 +90,7 @@ export default function Administration(){
                         <p>Serviços</p>
                     </div>
                     <div className={Style.button}>
-                        <Button title="Home" onClick={goHome}/>
-                        <Button title="Adicionar Produto" onClick={() => cadastramento()}/>
+                        <Button title="Cadastrar" onClick={() => cadastramento()}/>
                     </div>
                 </nav>
                 <footer className={Style.footer}>
