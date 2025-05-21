@@ -7,7 +7,7 @@ import Style from './Modal.module.css'
   return (
         <div className={Style.modal_overlay}> {/* Use Style.modal_overlay */}
             <div className={Style.modal_content}> {/* Use Style.modal_content */}
-                <h2 className={Style.modal_content_title}>{title}<br/>De <br/>produtos</h2>
+                <h2 className={Style.modal_content_title}>{title}De <br/>produto</h2>
                 {children} {/* Renderize a prop children */}
             </div>
         </div>

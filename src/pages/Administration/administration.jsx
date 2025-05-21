@@ -14,6 +14,7 @@ export default function Administration(){
     const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
+        id: null,
         nome: '',
         descricao: '',
         quantidade: '',
@@ -32,11 +33,14 @@ export default function Administration(){
     const handleSubmit = async(e) => {
         e.preventDefault();
 
-
-        console.log("Dados enviados:", formData);
+        
         try{
-            const response = await fetch('http://localhost:8080/produtos/save', {
-            method: 'POST',
+            const method = formData.id? 'PUT': 'POST';
+            const url = formData.id ? `http://localhost:8080/produtos/update/${formData.id}` 
+            : 'http://localhost:8080/produtos/save';
+        
+            const response = await fetch(url, {
+            method,
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -48,9 +52,12 @@ export default function Administration(){
             }
 
             const resultado = await response.json();
-            alert('Produto Salvo com Sucesso!');
+            alert(formData.id ?'Produto Editado com sucesso':'Produto Salvo com Sucesso!');
             setReloadTabela(prev => !prev);
-            setFormData({nome: '', descricao: '', quantidade: ''});
+            formData.id ? setIsModalOpen(false): setFormData({id: null, nome: '', descricao: '', quantidade: ''});
+            
+            
+            
 
         }catch(Error){
             console.log("Erro ao Enviar dados:", Error.message);
@@ -60,8 +67,20 @@ export default function Administration(){
 
     const cadastramento = () => {
         tipoDeModal = "Cadastramento ";
+        setFormData({id: null, nome: '', descricao: '', quantidade: ''});
         setIsModalOpen(true);
 
+    }
+
+    const handleClick = (produto) => {
+        tipoDeModal = "Edição ";
+        setFormData({
+            id: produto.id,
+            nome: produto.nome,
+            descricao: produto.descricao,
+            quantidade: produto.quantidade,
+        })
+        setIsModalOpen(true);
     }
 
     const fechamentoModal = () => {
@@ -79,8 +98,8 @@ export default function Administration(){
             <header className={Style.header}>
                 <nav className={Style.nav}>
                     <div className={Style.information}>
-                        <figure className={Style.figure}>
-                            <img className={Style.imagem} src={ImgCarrinho} alt="Carinho" onClick={goHome}/>
+                        <figure className={Style.figure} onClick={goHome}>
+                            <img className={Style.imagem} src={ImgCarrinho} alt="Carinho"/>
                         </figure>
                         <div className={Style.store}>
                             <p>Atakado</p>
@@ -103,7 +122,7 @@ export default function Administration(){
                 <div className={Style.main_background}></div>
                 <section>
                     <h2>Estoque</h2>
-                    <Tabela reload={reloadTabela}/>
+                    <Tabela reload={reloadTabela} edite={handleClick}/>
                 </section>
                 
             </main>
@@ -111,15 +130,35 @@ export default function Administration(){
                 <form onSubmit={handleSubmit} >
                     <div className={Style.modal_overlay_form}>
                         <label htmlFor="">
-                            Nome do Produto*<input type="text" name="nome" placeholder='Sabão' value={formData.nome} onChange={handleChange} required/>
+                            Nome do Produto*
+                            <input 
+                            type="text" 
+                            name="nome" 
+                            placeholder='Sabão' 
+                            value={formData.nome} 
+                            onChange={handleChange} 
+                            maxLength='50' 
+                            required/>
                         </label>
                         
                         <label htmlFor="">
-                            Descriçao*<input type="text" name="descricao" placeholder='Uso geral ...' value={formData.descricao} onChange={handleChange} required/>
+                            Descriçao*<input type="text" 
+                            name="descricao" 
+                            placeholder='Uso geral ...' 
+                            value={formData.descricao} 
+                            onChange={handleChange} 
+                            maxLength='100' 
+                            required/>
                         </label>
                         
                         <label htmlFor="">
-                            Quantidade*<input type="number" name='quantidade' placeholder='25' value={formData.quantidade} onChange={handleChange} min="1" required/>
+                            Quantidade*<input type="number" 
+                            name='quantidade' 
+                            placeholder='25' 
+                            value={formData.quantidade}
+                            onChange={handleChange} 
+                            min='1' max='10000'
+                            required/>
                         </label>
                     </div>
                     <div className={Style.modal_overlay_form_button}>

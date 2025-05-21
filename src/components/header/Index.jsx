@@ -4,12 +4,11 @@ import { useNavigate} from 'react-router-dom';
 
 export default function Index(){
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const goAdministration = () => {
     navigate('/Administration');
   };
-
     return(
         <header className={Style.header}>
             <nav>
@@ -17,6 +16,4 @@ export default function Index(){
             </nav>
         </header>
     )
-
-
 }

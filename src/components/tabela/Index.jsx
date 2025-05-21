@@ -2,7 +2,7 @@ import Style from './Index.module.css'
 import Button from '../button/Index'
 import { useEffect, useState} from 'react';
 
-export default function Index({reload}){
+export default function Index({reload, edite}){
     const [dados, setDados] = useState([]);
     const [erro, setErro] = useState(null);
     const [produtos, setProdutos] = useState([]);
@@ -35,6 +35,7 @@ export default function Index({reload}){
         return console.log(`Erro: ${erro}`);
     }
 
+    
 
     return(
         <>
@@ -54,7 +55,7 @@ export default function Index({reload}){
                             <td>{item.nome}</td>
                             <td>{item.descricao}</td>
                             <td>{item.quantidade}</td>
-                        <td ><div className={Style.Button}><Button title="Editar"/><Button title="Excluir" onClick={() => deleteDados(item.id)}/></div></td>
+                        <td ><div className={Style.Button}><Button title="Editar" onClick={() => edite(item)}/><Button title="Excluir" onClick={() => deleteDados(item.id)}/></div></td>
                     </tr>
                     ))}
                     </tbody>
