@@ -2,9 +2,10 @@ import Style from './Index.module.css'
 import Button from '../button/Index'
 import { useEffect, useState} from 'react';
 
-export default function Index(){
+export default function Index({reload}){
     const [dados, setDados] = useState([]);
     const [erro, setErro] = useState(null);
+    const [produtos, setProdutos] = useState([]);
 
     /*Realizar o GET permitindo que outras funcionalidade possa solicitar atualização */
     const buscarDados = () => {
@@ -18,7 +19,7 @@ export default function Index(){
     /*Atualizar os dados uma vez */
     useEffect(() => {
         buscarDados();
-    }, []);
+    }, [reload]);
 
 
     function deleteDados(id){
