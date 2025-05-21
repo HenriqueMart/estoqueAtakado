@@ -32,7 +32,7 @@ export default function Index({reload}){
     }
 
     if(erro){
-        return alert(`Erro: ${erro}`);
+        return console.log(`Erro: ${erro}`);
     }
 
 

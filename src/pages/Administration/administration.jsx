@@ -4,20 +4,10 @@ import Style from './administration.module.css'
 import { useNavigate } from 'react-router-dom';
 import Tabela from '../../components/tabela/Index'
 import { useState } from 'react';
+import Modal from '../../components/modal/Modal';
 
-function TelaModal({isOpen, onClose, children, title}){
-        if(!isOpen) return null;
-
-        return (
-           <div className={Style.modal_overlay}> {/* Use Style.modal_overlay */}
-            <div className={Style.modal_content}> {/* Use Style.modal_content */}
-                <h2>{title}De produtos</h2>
-                {children} {/* Renderize a prop children */}
-            </div>
-        </div>
-        ); 
-    }
-
+/* Variável Global para o tipo de cadastramento ou modificação de dados */
+let tipoDeModal = "";
 
 export default function Administration(){
 
@@ -26,9 +16,10 @@ export default function Administration(){
     const [formData, setFormData] = useState({
         nome: '',
         descricao: '',
-        quantidade: 0,
+        quantidade: '',
     });
     const [reloadTabela, setReloadTabela] = useState(false);
+    
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -59,16 +50,17 @@ export default function Administration(){
             const resultado = await response.json();
             alert('Produto Salvo com Sucesso!');
             setReloadTabela(prev => !prev);
-            setFormData({nome: '', descricao: '', quantidade: 0});
+            setFormData({nome: '', descricao: '', quantidade: ''});
 
-        }catch(error){
-            console.log("Erro ao Enviar dados:", error.message);
+        }catch(Error){
+            console.log("Erro ao Enviar dados:", Error.message);
         }
         
     };
 
     const cadastramento = () => {
-        setIsModalOpen(true)
+        tipoDeModal = "Cadastramento ";
+        setIsModalOpen(true);
 
     }
 
@@ -116,27 +108,27 @@ export default function Administration(){
                 </section>
                 
             </main>
-            <TelaModal isOpen={isModalOpen} title="Cadastramento" onClose={() => setIsModalOpen(false)}>
-                <form onSubmit={handleSubmit}>
-                    <div>
+            <Modal isOpen={isModalOpen} title={tipoDeModal} onClose={() => setIsModalOpen(false)}>
+                <form onSubmit={handleSubmit} >
+                    <div className={Style.modal_overlay_form}>
                         <label htmlFor="">
-                            Nome do Produto: <input type="text" name="nome" placeholder='Sabão' value={formData.nome} onChange={handleChange} required/>
+                            Nome do Produto*<input type="text" name="nome" placeholder='Sabão' value={formData.nome} onChange={handleChange} required/>
                         </label>
                         
                         <label htmlFor="">
-                            Descriçao: <input type="text" name="descricao" placeholder='Uso geral ...' value={formData.descricao} onChange={handleChange} required/>
+                            Descriçao*<input type="text" name="descricao" placeholder='Uso geral ...' value={formData.descricao} onChange={handleChange} required/>
                         </label>
                         
                         <label htmlFor="">
-                            Quantidade:<input type="number" name='quantidade' placeholder='25' value={formData.quantidade} onChange={handleChange} required/>
+                            Quantidade*<input type="number" name='quantidade' placeholder='25' value={formData.quantidade} onChange={handleChange} min="1" required/>
                         </label>
                     </div>
-                    <div>
-                        <Button type="submit" title="Cadastrar"/>
+                    <div className={Style.modal_overlay_form_button}>
+                        <Button type="submit" title="Salvar"/>
                         <Button onClick={() => fechamentoModal()} title="Cancelar"></Button>
                     </div>
                 </form>
-            </TelaModal>
+            </Modal>
 
         </div>
     )

@@ -115,22 +115,32 @@ body{
 
 /*Modal*/
 
-.modal_overlay{
-    position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+.modal_overlay_form{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-family: var(--font-second);
+    font-weight: 400;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
 }
 
-.modal_content {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  position: relative;
+.modal_overlay_form > label{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.modal_overlay_form > label > input{
+    padding: 5px 10px;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid black;
+    word-break: break-all;
+}
+
+.modal_overlay_form_button{
+    display: flex;
+    flex-direction: row;
 }

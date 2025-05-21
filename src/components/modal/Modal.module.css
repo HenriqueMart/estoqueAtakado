@@ -1,0 +1,32 @@
+/*Modal*/
+
+.modal_content_title{
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.modal_overlay{
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal_content {
+    width: 30vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    font-size: 20px;
+}
+

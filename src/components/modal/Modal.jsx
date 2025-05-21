@@ -1,17 +1,17 @@
 import React from 'react';
+import Style from './Modal.module.css'
   
- const Modal = ({ isOpen, onClose, children }) => {
+ const Modal = ({ isOpen, onClose, children, title }) => {
   if (!isOpen) return null;
 
   return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white p-6 rounded shadow-lg relative">
-            <button className="absolute top-2 right-2" onClick={onClose}>X</button>
-            {children}
+        <div className={Style.modal_overlay}> {/* Use Style.modal_overlay */}
+            <div className={Style.modal_content}> {/* Use Style.modal_content */}
+                <h2 className={Style.modal_content_title}>{title}<br/>De <br/>produtos</h2>
+                {children} {/* Renderize a prop children */}
+            </div>
         </div>
-        </div>
-    );
-    };
+    )};
 
     export default Modal;
 
