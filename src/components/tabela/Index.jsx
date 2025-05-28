@@ -5,7 +5,6 @@ import { useEffect, useState} from 'react';
 export default function Index({reload, edite}){
     const [dados, setDados] = useState([]);
     const [erro, setErro] = useState(null);
-    const [produtos, setProdutos] = useState([]);
 
     /*Realizar o GET permitindo que outras funcionalidade possa solicitar atualização */
     const buscarDados = () => {
@@ -32,7 +31,13 @@ export default function Index({reload, edite}){
     }
 
     if(erro){
-        return console.log(`Erro: ${erro}`);
+        return (
+            <div>
+                <p colSpan="4" style={{ textAlign: 'center', color: 'red' }}>
+                    Erro apresentado: ${erro}<br/>Entre em contato com o suporte!
+                </p>
+            </div>
+        )
     }
 
     
@@ -40,27 +45,40 @@ export default function Index({reload, edite}){
     return(
         <>
             <div className={Style.container}>
-                <table className={Style.tabela}>
-                    <thead>
+            <table className={Style.tabela}>
+                <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Descrição</th>
                         <th>Quantidade</th>
                         <th>Modificar</th>
                     </tr>
-                    </thead>
-                    <tbody>
-                    {dados.map(item => (
-                        <tr key={item.id}>
-                            <td>{item.nome}</td>
-                            <td>{item.descricao}</td>
-                            <td>{item.quantidade}</td>
-                        <td ><div className={Style.Button}><Button title="Editar" onClick={() => edite(item)}/><Button title="Excluir" onClick={() => deleteDados(item.id)}/></div></td>
-                    </tr>
-                    ))}
-                    </tbody>
-                </table>
-            </div>
+                </thead>
+                <tbody>
+                    { dados.length > 0 ? (
+                        dados.map(item => (
+                            <tr key={item.id}>
+                                <td>{item.nome}</td>
+                                <td>{item.descricao}</td>
+                                <td>{item.quantidade}</td>
+                                <td>
+                                    <div className={Style.Button}>
+                                        <Button title="Editar" onClick={() => edite(item)} />
+                                        <Button title="Excluir" onClick={() => deleteDados(item.id)} />
+                                    </div>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="4" style={{ textAlign: 'center' }}>
+                                Nenhum produto cadastrado!
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+        </div>
         </>
     );
 }
