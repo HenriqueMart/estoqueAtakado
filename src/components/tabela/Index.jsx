@@ -5,7 +5,15 @@ import { useEffect, useState} from 'react';
 export default function Index({reload, edite}){
     const [dados, setDados] = useState([]);
     const [erro, setErro] = useState(null);
+    const [itensPerPage, setItensPerPage] = useState(5);
+    const [currentPage, setCurrentPage] = useState(0);
 
+
+    const startIndex = currentPage * itensPerPage;
+    const endIndex = startIndex + itensPerPage;
+    const dadosPaginados = dados.slice(startIndex, endIndex);
+    const pages = Math.ceil(dados.length / itensPerPage);
+    
     /*Realizar o GET permitindo que outras funcionalidade possa solicitar atualização */
     const buscarDados = () => {
         fetch("http://localhost:8080/produtos/findall").then(response => {
@@ -18,8 +26,8 @@ export default function Index({reload, edite}){
     /*Atualizar os dados uma vez */
     useEffect(() => {
         buscarDados();
+        setCurrentPage(0)//Voltar para primeira Página
     }, [reload]);
-
 
     function deleteDados(id){
         fetch(`http://localhost:8080/produtos/delete/${id}`, {
@@ -39,9 +47,6 @@ export default function Index({reload, edite}){
             </div>
         )
     }
-
-    
-
     return(
         <>
             <div className={Style.container}>
@@ -55,8 +60,8 @@ export default function Index({reload, edite}){
                     </tr>
                 </thead>
                 <tbody>
-                    { dados.length > 0 ? (
-                        dados.map(item => (
+                    { dadosPaginados.length > 0 ? (
+                        dadosPaginados.map(item => (
                             <tr key={item.id}>
                                 <td>{item.nome}</td>
                                 <td>{item.descricao}</td>
@@ -78,6 +83,15 @@ export default function Index({reload, edite}){
                     )}
                 </tbody>
             </table>
+        </div>
+        <div className={Style.numberPages}>
+            {Array.from({ length: pages }, (_, index) => (
+                <Button title={index + 1}
+                key={index} 
+                onClick={() => setCurrentPage(index)}
+                >
+                </Button>
+            ))}
         </div>
         </>
     );

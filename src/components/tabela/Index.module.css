@@ -42,3 +42,30 @@
     word-break: keep-all;
 }
 
+.numberPages{
+    background-color: var(--cor-verde);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+
+.numberPages Button{
+    width: 25px;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: var(--font-second);
+    color: var(--cor-preto);
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.numberPages Button:hover{
+    background-color: var(--cor-verde);
+    color: var(--cor-preto);
+    transition: 0.8s;
+}

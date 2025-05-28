@@ -1,83 +1,95 @@
-# ESTOQUE ATAKADO
+# Estoque Atakado
 
-## Sumário
-O objetivo desse projeto é controlar um estoque de produto de uma distribuidores de produtos. Tendo todas as funcionabilidades de CRUD tanto no front-end quando no Back-end.
+## 📋 Sumário
+Este projeto tem como objetivo controlar o estoque de produtos de uma distribuidora, com funcionalidades completas de CRUD tanto no front-end quanto no back-end.
 
-## Funcionalidades
+> 🔗 O foco deste README é o **Front-end**. Para acessar o Back-end, clique [aqui](https://github.com/Bielziinhu/Estoquista).
+
+---
+
+## 🖥️ Funcionalidades
 
 ### Tela Inicial
 ![Home](/src/images/readme/home.png)
 
-### Tela De cadastramento de Produto
-![Home](/src/images/readme/home_cadastro.png)
-
+### Tela de Cadastro de Produto
+![Cadastro](/src/images/readme/home_cadastro.png)
 
 #### Criar Produto
-![Home](/src/images/readme/Cadastrar.png)
-- Solicita as informações dos produtos, descrição e quantidade.  
-- Permitindo cadastrar ou cancelar.
+![Cadastrar](/src/images/readme/Cadastrar.png)
+- Informar descrição e quantidade.
+- Botões para salvar ou cancelar.
 
 #### Editar Produto
-![Home](/src/images/readme/edição.png)
-- Recarrega as informações dos produtos, descrição e quantidade.  
-- Permitindo alterar ou cancelar.
+![Editar](/src/images/readme/edição.png)
+- Carrega dados do produto para edição.
+- Botões para salvar alterações ou cancelar.
 
 #### Excluir Produto
-![Home](/src/images/readme/Excluir.png)
+![Excluir](/src/images/readme/Excluir.png)
 
-#### Busca Produto Salvos. 
-- Realizando o carregamento dos produtos da página ao carregar.
+#### Busca de Produtos Salvos
+- Ao carregar a página, os produtos são exibidos automaticamente.
 
-## Tecnologias Utilizadas
+---
+
+## 🛠️ Tecnologias Utilizadas
 
 ### Front-end
-[HTML] (https://developer.mozilla.org/pt-BR/docs/Web/HTML)<br>
-[CSS] (https://developer.mozilla.org/pt-BR/docs/Web/CSS)<br>
-[JavaScript] (https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)<br>
-[React] (https://pt-br.legacy.reactjs.org/docs/getting-started.html)<br>
-...
-### Back-end **Não é o foco desse Readme**
-[Java] (https://docs.oracle.com/en/java/)<br>
-[Spring_Boot] (https://docs.spring.io/spring-boot/documentation.html)<br>
-...
-Banco de Dados<br>
-[MySQL] (https://dev.mysql.com/doc/)<br>
-Outras Ferramentas/Serviços<br>
-[Postman]<br>
-## Como Rodar o Projeto
-Com o foco no Front-end caso deseje analisar o Back-end [link](https://github.com/Bielziinhu/Estoquista)<br>
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)  
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)  
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)  
+- [React](https://pt-br.legacy.reactjs.org/docs/getting-started.html)
 
-## Pré-requisitos
+### Back-end (não abordado neste README)
+- [Java](https://docs.oracle.com/en/java/)  
+- [Spring Boot](https://docs.spring.io/spring-boot/documentation.html)  
+- [MySQL](https://dev.mysql.com/doc/)  
+- Postman
 
+---
 
-## Front-End
+## 🚀 Como Rodar o Projeto
 
-1 - Baixa o projeto no git  ou Clonar o repositório<br>
-![clone](/src/images/readme/image.png)<br>
-2 - Node.js (Estou utilizando nesse projeto a versão 22.11.0)<br>
-3 - Npm (Versão utilizada 10.9.0)<br>
+### Pré-requisitos
+- Node.js (v22.11.0)
+- npm (v10.9.0)
+- Git
 
+### Passos
 
-├── front-end/<br>
-│   ├──public/<br>
-│   ├── src/<br>
-│   │   ├── assets/<br>
-│   │   ├── components/<br>
-│   │   ├── images/<br>
-│   │   ├── pages/<br>
-│   │   ├── Style/<br>
-│   │   └── App.css<br>
-│   │   └── App.js<br>
-│   │   └── App.test.js<br>
-│   │   └── global.css<br>
-│   │   └── index.css<br>
-│   │   └── index.js<br>
-├── package.json<br>
-├── .gitignore<br>
-└── README.md<br>
+- Primeiramente instale o git no site: https://git-scm.com/downloads
+- Tutorial para a instalação:  no [window](https://dicasdeprogramacao.com.br/como-instalar-o-git-no-windows/)<br>
+[Linux](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
+```bash
+# Clonar o repositório
+git clone https://github.com/Bielziinhu/Estoquista-Front-End.git
 
+# Acessar o diretório
+cd front-end
 
-Contato
+# Instalar as dependências
+npm install
 
-Email<br>
-[Email](devhenriquemartins@gmail.com)
+# Iniciar o projeto
+npm start
+```
+
+## Estrutura do Projeto:
+```bash
+├── public/ <br>
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── images/
+│   ├── pages/
+│   ├── Style/
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── global.css
+│   ├── index.css
+│   └── index.js
+├── package.json
+├── .gitignore
+└── README.md
