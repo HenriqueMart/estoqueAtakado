@@ -57,7 +57,7 @@ Com o foco no Front-end caso deseje analisar o Back-end [link](https://github.co
 2 - Node.js (Estou utilizando nesse projeto a versão 22.11.0)<br>
 3 - Npm (Versão utilizada 10.9.0)<br>
 
-`
+
 ├── front-end/<br>
 │   ├──public/<br>
 │   ├── src/<br>
@@ -75,7 +75,7 @@ Com o foco no Front-end caso deseje analisar o Back-end [link](https://github.co
 ├── package.json<br>
 ├── .gitignore<br>
 └── README.md<br>
-`
+
 
 Contato
 
