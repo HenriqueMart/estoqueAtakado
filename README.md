@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+#ESTOQUE ATAKADO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Sumário
+O objetivo desse projeto é controlar um estoque de produto de uma distribuidores de produtos. Tendo todas as funcionabilidades de CRUD tanto no front-end quando no Back-end.
 
-## Available Scripts
+##Funcionalidades
 
-In the project directory, you can run:
+###Tela Inicial
+[Home](/src/images/readme/home.png)
 
-### `npm start`
+###Tela De cadastramento de Produto
+[Home](/src/images/readme/home_cadastro.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Criar Produto
+[Home](/src/images/readme/Cadastrar.png)
+- Solicita as informações dos produtos, descrição e quantidade.  
+- Permitindo cadastrar ou cancelar.
 
-### `npm test`
+#### Editar Produto
+[Home](/src/images/readme/edição.png)
+- Recarrega as informações dos produtos, descrição e quantidade.  
+- Permitindo alterar ou cancelar.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Excluir Prodtuo
+[Home](/src/images/readme/Excluir.png)
 
-### `npm run build`
+#### Busca Produto Salvos. 
+- Realizando o carregamento dos produtos da página ao carregar.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tecnologias Utilizadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Front-end
+[HTML] (https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[CSS] (https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[JavaScript] (https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[React] (https://pt-br.legacy.reactjs.org/docs/getting-started.html)
+...
+Back-end **Não é o foco desse Readme**
+[Java] (https://docs.oracle.com/en/java/)
+[Spring_Boot] (https://docs.spring.io/spring-boot/documentation.html)
+...
+Banco de Dados
+[MySQL] (https://dev.mysql.com/doc/)
+Outras Ferramentas/Serviços
+[Postman]
+Como Rodar o Projeto
+Com o foco no Front-end caso deseje analisar o Back-end [link](https://github.com/Bielziinhu/Estoquista)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Pré-requisitos
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##Front-End
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1 - Baixa o projeto no git  ou Clonar o repositório
+![clone](/src/images/readme/image.png)
+2 - Node.js (Estou utilizando nesse projeto a versão 22.11.0)
+3 - npm (Versão utilizada 10.9.0)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+.
+├── front-end/
+│   ├──public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── images/
+│   │   ├── pages/
+│   │   ├── Style/
+│   │   └── App.css
+│   │   └── App.js
+│   │   └── App.test.js
+│   │   └── global.css
+│   │   └── index.css
+│   │   └── index.js
+├── package.json
+├── .gitignore
+└── README.md
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Contato
+Como o pessoal pode te achar ou tirar dúvidas.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Email](https://github.com/henriquemart)
+[HenriqueMart]()
+Seu Email
+[Email](devhenriquemartins@gmail.com)
