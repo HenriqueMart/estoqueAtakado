@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/estoqueAtakado/static/css/main.e1fd6e0d.css",
-    "main.js": "/estoqueAtakado/static/js/main.530f210a.js",
+    "main.js": "/estoqueAtakado/static/js/main.2320b69e.js",
     "static/media/carrinho-de-compras.png": "/estoqueAtakado/static/media/carrinho-de-compras.78d95995d7a654dc0363.png",
     "index.html": "/estoqueAtakado/index.html",
     "main.e1fd6e0d.css.map": "/estoqueAtakado/static/css/main.e1fd6e0d.css.map",
-    "main.530f210a.js.map": "/estoqueAtakado/static/js/main.530f210a.js.map"
+    "main.2320b69e.js.map": "/estoqueAtakado/static/js/main.2320b69e.js.map"
   },
   "entrypoints": [
     "static/css/main.e1fd6e0d.css",
-    "static/js/main.530f210a.js"
+    "static/js/main.2320b69e.js"
   ]
 }
