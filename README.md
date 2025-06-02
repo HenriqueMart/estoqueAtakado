@@ -58,8 +58,8 @@ Este projeto tem como objetivo controlar o estoque de produtos de uma distribuid
 
 ### Passos
 
-- Primeiramente instale o git no site: https://git-scm.com/downloads
-- Tutorial para a instalação:  no [window](https://dicasdeprogramacao.com.br/como-instalar-o-git-no-windows/)<br>
+- Primeiramente instale o [git](https://git-scm.com/downloads) no site: 
+- Tutorial para a instalação:  no [window](https://dicasdeprogramacao.com.br/como-instalar-o-git-no-windows/) ou
 [Linux](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
 ```bash
 # Clonar o repositório
@@ -77,7 +77,7 @@ npm start
 
 ## Estrutura do Projeto:
 ```bash
-├── public/ <br>
+├── public/
 ├── src/
 │   ├── assets/
 │   ├── components/
