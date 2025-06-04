@@ -49,14 +49,15 @@ Este projeto tem como objetivo controlar o estoque de produtos de uma distribuid
 
 ---
 
-## 🚀 Como Rodar o Projeto
+## 🚀 Como Visualiar o Front-end (Deploy)
+[Site](https://henriquemart.github.io/estoqueAtakado/)
 
 ### Pré-requisitos
 - Node.js (v22.11.0)
 - npm (v10.9.0)
 - Git
 
-### Passos
+### Passos para rodar no computador
 
 - Primeiramente instale o [git](https://git-scm.com/downloads) no site: 
 - Tutorial para a instalação:  no [window](https://dicasdeprogramacao.com.br/como-instalar-o-git-no-windows/) ou
@@ -67,6 +68,10 @@ git clone https://github.com/Bielziinhu/Estoquista-Front-End.git
 
 # Acessar o diretório
 cd front-end
+
+# Instalar o NODE
+[Site](https://nodejs.org/pt)
+[Tutorial](https://www.alura.com.br/artigos/como-instalar-node-js-windows-linux-macos)
 
 # Instalar as dependências
 npm install
